@@ -24,3 +24,4 @@ rules:
     - error
     - skipUndeclared: true
   react/self-closing-comp: error
+  react/react-in-jsx-scope: off
