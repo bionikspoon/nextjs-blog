@@ -15,6 +15,9 @@ export default function Home(): JSX.Element {
           I build tools to drive invoice adoption as we lay down solid
           foundations for an industry-changing payments revolution.
         </p>
+        <p>
+          See my <Link href="/posts/first-post">first post</Link>!
+        </p>
       </section>
     </Layout>
   )
