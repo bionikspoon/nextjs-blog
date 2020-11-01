@@ -1,6 +1,7 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <div className="container">
       <Head>
@@ -14,7 +15,7 @@ export default function Home() {
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Read <Link href="/posts/first-post">this page!</Link>
         </p>
 
         <div className="grid">
@@ -98,7 +99,7 @@ export default function Home() {
         }
 
         a {
-          color: inherit;
+          // color: inherit;
           text-decoration: none;
         }
 
