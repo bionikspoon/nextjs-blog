@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { ParsedUrlQuery } from 'querystring'
 import { Date } from '../../components/Date'
 import { Layout } from '../../components/Layout'
