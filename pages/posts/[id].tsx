@@ -2,8 +2,10 @@ import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { ParsedUrlQuery } from 'querystring'
+import { Date } from '../../components/Date'
 import { Layout } from '../../components/Layout'
 import { getAllPostIds, getPostData, PostData } from '../../lib/posts'
+import utilStyles from '../../styles/utils.module.scss'
 
 interface QueryArgs extends ParsedUrlQuery {
   id: string
@@ -20,10 +22,13 @@ export default function Post(props: PostProps): JSX.Element {
       <Head>
         <title>{props.postData.title}</title>
       </Head>
-      <h1>{props.postData.title}</h1>
-      <p>{props.postData.id}</p>
-      <p>{props.postData.date}</p>
-      <div dangerouslySetInnerHTML={{ __html: props.postData.contentHtml }} />
+      <article>
+        <h1 className={utilStyles.headingXl}>{props.postData.title}</h1>
+        <div className={utilStyles.lightText}>
+          <Date date={props.postData.date} />
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: props.postData.contentHtml }} />
+      </article>
     </Layout>
   )
 }

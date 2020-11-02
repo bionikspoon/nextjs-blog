@@ -1,6 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import { Date } from '../components/Date'
 import { Layout, SITE_TITLE } from '../components/Layout'
 import { getSortedPostsData, PostData } from '../lib/posts'
 import utilStyles from '../styles/utils.module.scss'
@@ -19,24 +20,18 @@ export default function Home(props: HomeProps): JSX.Element {
       </Head>
 
       <section className={utilStyles.headingMd}>
-        <p>
-          I build tools to drive invoice adoption as we lay down solid
-          foundations for an industry-changing payments revolution.
-        </p>
-        <p>
-          See my <Link href="/posts/first-post">first post</Link>!
-        </p>
+        <p>I build tools to intended to improve lives.</p>
       </section>
 
       <h2 className={utilStyles.headingLg}>Blog</h2>
       <ul className={utilStyles.list}>
         {props.allPostsData.map((post) => (
           <li className={utilStyles.listItem} key={post.id}>
-            {post.title}
+            <Link href={`/posts/${post.id}`}>{post.title}</Link>
             <br />
-            {post.id}
-            <br />
-            {post.date}
+            <small className={utilStyles.lightText}>
+              <Date date={post.date} />
+            </small>
           </li>
         ))}
       </ul>
