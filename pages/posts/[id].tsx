@@ -23,9 +23,7 @@ export default function Post(props: PostProps): JSX.Element {
       <h1>{props.postData.title}</h1>
       <p>{props.postData.id}</p>
       <p>{props.postData.date}</p>
-      <h2>
-        <Link href="/">back to home</Link>
-      </h2>
+      <div dangerouslySetInnerHTML={{ __html: props.postData.contentHtml }} />
     </Layout>
   )
 }
